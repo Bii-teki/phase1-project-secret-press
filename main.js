@@ -18,82 +18,82 @@ openModal()
 
 
 
-//         fetch("http://localhost:3000/blogs")
-//         .then(response=>response.json())
-//         .then(data=>getBlogs(data))      
+        fetch("http://localhost:3000/blogs")
+        .then(response=>response.json())
+        .then(data=>getBlogs(data))      
 
    
-//     function getBlogs(blogs) {
-//     blogs.forEach(char => {       
-//         const blog = document.getElementById("blogs")
+    function getBlogs(blogs) {
+    blogs.forEach(char => {       
+        const blog = document.getElementById("blogs")
       
-//         const card = document.createElement("div")
-//         card.className ="blog-card"
-//         card.innerHTML= `
-//         <img class="blog-image1" src="${char.poster}">
-//         <h1 class="blog-title">${char.title}</h1>
-//         <p class="blog-overview">${char.description.substring(0, 100) + '...'}</p>  
-//         <button id="read" class="btn dark">Read More</button> 
-//         <button id="del" class="btn dark">Delete</button>  
-//         <button id="edit" class="btn dark">Edit</button>     
-//         `
+        const card = document.createElement("div")
+        card.className ="blog-card"
+        card.innerHTML= `
+        <img class="blog-image1" src="${char.poster}">
+        <h1 class="blog-title">${char.title}</h1>
+        <p class="blog-overview">${char.description.substring(0, 100) + '...'}</p>  
+        <button id="read" class="btn dark">Read More</button> 
+        <button id="del" class="btn dark">Delete</button>  
+        <button id="edit" class="btn dark">Edit</button>     
+        `
 
-//         card.querySelector("#read").addEventListener('click', ()=> {            
-//         displayOneBlog(char.id)
+        card.querySelector("#read").addEventListener('click', ()=> {            
+        displayOneBlog(char.id)
 
-//          })
+         })
          
-//         card.querySelector("#del").addEventListener('click', ()=> {card.remove()
-//             alert('Hello, are you sure you want to delete this blog')
-//         deleteBlog(char.id)
-//          })
+        card.querySelector("#del").addEventListener('click', ()=> {card.remove()
+            alert('Hello, are you sure you want to delete this blog')
+        deleteBlog(char.id)
+         })
 
-//         let edit1= card.querySelector("#edit")
-//         edit1.dataModal ="blogEditor"
-//          edit1.className ="btn"
-//         edit1.addEventListener('click', (e)=> {
-//             const title = e.target.title
-//             const poster = e.target.poster
-//             const topic = e.target.topic
-//             const description = e.target.description
+        let edit1= card.querySelector("#edit")
+        edit1.dataModal ="blogEditor"
+         edit1.className ="btn"
+        edit1.addEventListener('click', (e)=> {
+            const title = e.target.title
+            const poster = e.target.poster
+            const topic = e.target.topic
+            const description = e.target.description
            
-//            const editor= document.getElementById("editor")
-//            const modal = document.createElement('div')
-//            modal.className='modal-content'
-//            modal.innerHTML=`
-//            <div class="contact-form">
-//            <a class="close">&times;</a>
-//            <form id="new-blog">
+           const editor= document.getElementById("editor")
+           const modal = document.createElement('div')
+           modal.className='modal-content'
+           modal.innerHTML=`
+           <div class="contact-form">
+           <a class="close">&times;</a>
+           <form id="new-blog">
           
-//            <h2>Blog</h2>
-//           <div>                    
-//             <input class="fname" id="title" value= " ${char.title}" type="text" name="title" placeholder="Title" />
-//             <input class="fname" id="topic" type="text"  value= " ${char.topic}" name="topic" placeholder="Topic" />
-//                    -->
-//             <input type="text" id="poster" name="poster"  value= " ${char.poster}" placeholder="image" />
-//           </div>
-//           <span>Message</span>
-//           <div>
-//             <textarea id="description" value="${char.description}"   name="description" rows="4"></textarea>
-//           </div>
-//           <button type="submit" href="/">Submit</button>
-//            </div>
-//            </form>                     
-//            `
-//            modal.querySelector(".close").addEventListener('click', ()=> {
+           <h2>Blog</h2>
+          <div>                    
+            <input class="fname" id="title" value= " ${char.title}" type="text" name="title" placeholder="Title" />
+            <input class="fname" id="topic" type="text"  value= " ${char.topic}" name="topic" placeholder="Topic" />
+                   -->
+            <input type="text" id="poster" name="poster"  value= " ${char.poster}" placeholder="image" />
+          </div>
+          <span>Message</span>
+          <div>
+            <textarea id="description" value="${char.description}"   name="description" rows="4"></textarea>
+          </div>
+          <button type="submit" href="/">Submit</button>
+           </div>
+           </form>                     
+           `
+           modal.querySelector(".close").addEventListener('click', ()=> {
             
-//            modal.remove()
-//         })
-//           editor.append(modal)
+           modal.remove()
+        })
+          editor.append(modal)
            
-//          })
+         })
 
 
-//         blog.append(card)
+        blog.append(card)
         
                
-//     }); 
-//     } 
+    }); 
+    } 
 
    
 //     function displayOneBlog(id) {
