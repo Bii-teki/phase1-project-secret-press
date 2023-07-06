@@ -38,7 +38,12 @@ openModal()
         <button id="edit" class="btn dark">Edit</button>     
         `
 
-        card.querySelector("#read").addEventListener('click', ()=> {            
+        card.querySelector("#read").addEventListener('click', ()=> { 
+            const di = document.getElementById("blogEditor1").style.display = "block" 
+            document.getElementById("imga").src =char.poster
+            document.getElementById("title1").innerHTML =char.title
+            document.getElementById("description1").innerHTML =char.description
+            
         displayOneBlog(char.id)
 
          })
@@ -49,22 +54,16 @@ openModal()
          })
 
         let edit1= card.querySelector("#edit")
-        edit1.dataModal ="blogEditor"
+         edit1.dataModal ="blogEditor"
          edit1.className ="btn"
-        edit1.addEventListener('click', (e)=> {
+         edit1.addEventListener('click', ()=> {
             document.getElementById("blogEditor").style.display= "block";
-            document.getElementById("title").value =char.title        
-           
+            document.getElementById("title").value =char.title                 
             document.getElementById("topic").value = char.topic
-              document.getElementById("description").value = char.description
-               document.getElementById("poster").value = char.poster
-
-           
-            
-           
+            document.getElementById("description").value = char.description
+            document.getElementById("poster").value = char.poster          
+          
          })
-
-
         blog.append(card)
         
                
@@ -130,7 +129,6 @@ openModal()
                 alert("Kindly fill all the fields")
                }
                else{
-
                     e.preventDefault()
                     let blogObj ={
                     // id: e.target.id.value,
