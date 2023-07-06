@@ -18,12 +18,9 @@ function mainBlog() {
         document.getElementById("blogEditor1").style.display= "none";
     })
  }
- closeDisplay()
- closeModal()
-openModal()
-
-
-
+        closeDisplay()
+        closeModal()
+        openModal()
 
         fetch("http://localhost:3000/blogs")
         .then(response=>response.json())
@@ -41,17 +38,14 @@ openModal()
         <h1 class="blog-title">${char.title}</h1>
         <p class="blog-overview">${char.description.substring(0, 100) + '...'}</p>  
         <button id="read" class="btn dark">Read More</button> 
-        <button id="del" class="btn dark">Delete</button>  
-        <button id="edit" class="btn dark">Edit</button>     
+        <button id="del" class="btn red">Delete</button>  
+        <button id="edit" class="btn edit">Edit</button>    
         `
-
         card.querySelector("#read").addEventListener('click', ()=> { 
             const di = document.getElementById("blogEditor1").style.display = "block" 
             document.getElementById("imga").src =char.poster
             document.getElementById("title1").innerHTML =char.title
             document.getElementById("description1").innerHTML =char.description
-            
-        displayOneBlog(char.id)
 
          })
          
@@ -78,41 +72,6 @@ openModal()
     } 
 
    
-    function displayOneBlog(id) {
-        fetch(`http://localhost:3000/blogs/${id}`)
-        .then(response=>response.json())
-        .then(data=> displayerBlog(data))
-        
-    }
-    function displayerBlog(blogs) {
-        
-        const di = document.getElementById("display")
-        const container = document.createElement('div')
-        container.className= "viewer-container"
-        const modal = document.createElement('div')
-         modal.className='viewer'
-           modal.innerHTML=`
-           <div class="contact-form">
-           <a class="close">&times;</a>
-           <img class="viewer-img" src="${blogs.poster}">
-          <h1 class="blog-title">${blogs.title}</h1>
-           <p class="blog-overview">${blogs.description}</p>          
-          </div>                    
-           `
-           modal.style.display= "block";
-          container.append(modal)
-          di.append(container)
-
-          container.querySelector(".close").addEventListener('click', ()=> {
-            
-            container.remove()
-         })
-          
-           
-
-    }
-
-
    function deleteBlog(id) {
     fetch(`http://localhost:3000/blogs/${id}`,{
         method: 'Delete',
