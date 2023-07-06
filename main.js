@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded',function () {   
+let loader = document.addEventListener('DOMContentLoaded',function () {   
    
  function openModal(){
     const ed = document.getElementById("btn")
