@@ -1,4 +1,9 @@
-let loader = document.addEventListener('DOMContentLoaded',function () {   
+let loader = document.addEventListener('DOMContentLoaded',function () {  
+    document.getElementById("title").addEventListener("change", capitalTitle); 
+    function capitalTitle() {
+        let bob = document.getElementById("title");
+        bob.value = bob.value.toUpperCase();
+      }
    
  function openModal(){
     const ed = document.getElementById("btn")
