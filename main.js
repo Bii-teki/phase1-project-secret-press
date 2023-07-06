@@ -141,14 +141,14 @@ openModal()
     })
 }
 
-//     let former = document.getElementById('new-blog').addEventListener('submit', handleSubmit)
-//             // adds an event to form
-//                 function handleSubmit(e) {
-//             // creates  an object  called  filmObj
-//                const title = document.getElementById('title').value
-//                const topic = document.getElementById('topic').value
-//                const description = document.getElementById('description').value
-//                const poster = document.getElementById('poster').value
+    let former = document.getElementById('new-blog').addEventListener('submit', handleSubmit)
+            // adds an event to form
+                function handleSubmit(e) {
+            // creates  an object  called  filmObj
+               const title = document.getElementById('title').value
+               const topic = document.getElementById('topic').value
+               const description = document.getElementById('description').value
+               const poster = document.getElementById('poster').value
                
 //                if(title==='' || topic==='' || description==='' || poster==='' ){
 //                 alert("Kindly fill all the fields")
