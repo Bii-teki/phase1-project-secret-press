@@ -1,16 +1,17 @@
-let loader = document.addEventListener('DOMContentLoaded',function () {  
+let loader = document.addEventListener('DOMContentLoaded',function () { 
+    // capitalize the title as it is being typed 
     document.getElementById("title").addEventListener("change", capitalTitle); 
     function capitalTitle() {
         let bob = document.getElementById("title");
         bob.value = bob.value.toUpperCase();
       }
-   
+   // display a create form in a pop up form
  function openModal(){
     const ed = document.getElementById("btn")
     ed.addEventListener('click', ()=>{
         document.getElementById("blogEditor").style.display= "block";
     })
- }
+ }// closes the pop up
  function closeModal(){
     const ed = document.getElementById("closur")
     ed.addEventListener('click', ()=>{
@@ -31,7 +32,9 @@ let loader = document.addEventListener('DOMContentLoaded',function () {
         .then(response=>response.json())
         .then(data=>getBlogs(data))      
 
-   
+   // fetch values of each object and 
+   //loops  through the items of that object
+   //then display in a card
     function getBlogs(blogs) {
     blogs.forEach(char => {       
         const blog = document.getElementById("blogs")
@@ -53,7 +56,8 @@ let loader = document.addEventListener('DOMContentLoaded',function () {
             document.getElementById("description1").innerHTML =char.description
 
          })
-         
+         // on click it alerts the use if he/she wants to delete
+         // deletes the blog         
         card.querySelector("#del").addEventListener('click', ()=> {card.remove()
         alert('Hello, are you sure you want to delete this blog')
         deleteBlog(char.id)
@@ -63,6 +67,7 @@ let loader = document.addEventListener('DOMContentLoaded',function () {
          edit1.dataModal ="blogEditor"
          edit1.className ="btn"
          edit1.addEventListener('click', ()=> {
+            //sets values of blogs to editor
             document.getElementById("blogEditor").style.display= "block";
             document.getElementById("title").value =char.title                 
             document.getElementById("topic").value = char.topic
@@ -76,7 +81,7 @@ let loader = document.addEventListener('DOMContentLoaded',function () {
     }); 
     } 
 
-   
+   //deletes an item from json
    function deleteBlog(id) {
     fetch(`http://localhost:3000/blogs/${id}`,{
         method: 'Delete',
@@ -95,7 +100,7 @@ let loader = document.addEventListener('DOMContentLoaded',function () {
                const topic = document.getElementById('topic').value
                const description = document.getElementById('description').value
                const poster = document.getElementById('poster').value
-               
+               // perform form validation checking if the form is empty or not
                if(title==='' || topic==='' || description==='' || poster==='' ){
                 alert("Kindly fill all the fields")
                }
@@ -113,7 +118,7 @@ let loader = document.addEventListener('DOMContentLoaded',function () {
                 postBlog(blogObj)
             }
               
-  
+      //Post blogs data to json file
         function postBlog(blogObj) {
 
             fetch('http://localhost:3000/blogs',{
@@ -129,18 +134,19 @@ let loader = document.addEventListener('DOMContentLoaded',function () {
             
         }
     }
- 
+ //sort fuction fetch blogs  
 function sortBlogs() {
     fetch("http://localhost:3000/blogs")
         .then(response=>response.json())
         .then(data=>sortArray(data))  
 
     function sortArray(blogs) {
-        const sortedAsc = blogs.sort(
+        // sort them according to the time they were created
+        const sortedDsc = blogs.sort(
             (blog1, blog2) => Number(blog1.createdAt) - Number(blog2.createdAt),                 
                   ).reverse();
-         
-           let header = sortedAsc.slice(0,1)
+         // displays the most recent blog
+           let header = sortedDsc.slice(0,1)
           header.forEach(char => { 
             const card = document.createElement("div")
             card.className ="blog-card"
@@ -154,8 +160,6 @@ function sortBlogs() {
             <button id="edit" class="btn dark">Edit</button>     
             `
             const ul = document.getElementById("list-name")
-            // const li = document.createElement("li")
-            // li.innerHTML = char.title
             card.style.display="block"
             ul.append(card)
             console.log(char.title);
