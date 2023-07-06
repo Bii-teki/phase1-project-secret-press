@@ -12,6 +12,13 @@ function mainBlog() {
         document.getElementById("blogEditor").style.display= "none";
     })
  }
+ function closeDisplay(){
+    const de = document.getElementById("closure")
+    de.addEventListener('click', ()=>{
+        document.getElementById("blogEditor1").style.display= "none";
+    })
+ }
+ closeDisplay()
  closeModal()
 openModal()
 
