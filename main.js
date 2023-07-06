@@ -44,7 +44,7 @@ openModal()
          })
          
         card.querySelector("#del").addEventListener('click', ()=> {card.remove()
-            alert('Hello, are you sure you want to delete this blog')
+        alert('Hello, are you sure you want to delete this blog')
         deleteBlog(char.id)
          })
 
@@ -52,39 +52,15 @@ openModal()
         edit1.dataModal ="blogEditor"
          edit1.className ="btn"
         edit1.addEventListener('click', (e)=> {
-            const title = e.target.title
-            const poster = e.target.poster
-            const topic = e.target.topic
-            const description = e.target.description
+            document.getElementById("blogEditor").style.display= "block";
+            document.getElementById("title").value =char.title        
            
-           const editor= document.getElementById("editor")
-           const modal = document.createElement('div')
-           modal.className='modal-content'
-           modal.innerHTML=`
-           <div class="contact-form">
-           <a class="close">&times;</a>
-           <form id="new-blog">
-          
-           <h2>Blog</h2>
-          <div>                    
-            <input class="fname" id="title" value= " ${char.title}" type="text" name="title" placeholder="Title" />
-            <input class="fname" id="topic" type="text"  value= " ${char.topic}" name="topic" placeholder="Topic" />
-                   -->
-            <input type="text" id="poster" name="poster"  value= " ${char.poster}" placeholder="image" />
-          </div>
-          <span>Message</span>
-          <div>
-            <textarea id="description" value="${char.description}"   name="description" rows="4"></textarea>
-          </div>
-          <button type="submit" href="/">Submit</button>
-           </div>
-           </form>                     
-           `
-           modal.querySelector(".close").addEventListener('click', ()=> {
+            document.getElementById("topic").value = char.topic
+              document.getElementById("description").value = char.description
+               document.getElementById("poster").value = char.poster
+
+           
             
-           modal.remove()
-        })
-          editor.append(modal)
            
          })
 
