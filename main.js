@@ -169,57 +169,57 @@ openModal()
             }
               
   
-//         function postBlog(blogObj) {
+        function postBlog(blogObj) {
 
-//             fetch('http://localhost:3000/blogs',{
-//             method: 'post',
-//             headers: {
-//                 'Content-Type': 'application/json'
-//             },
-//                 body: JSON.stringify(blogObj)
+            fetch('http://localhost:3000/blogs',{
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+                body: JSON.stringify(blogObj)
             
-//             })
-//             .then(res=>res.json)
-//             .then(blogs=>console.log(blogs))
+            })
+            .then(res=>res.json)
+            .then(blogs=>console.log(blogs))
             
-//         }
-//     }
+        }
+    }
  
-// function sortBlogs() {
-//     fetch("http://localhost:3000/blogs")
-//         .then(response=>response.json())
-//         .then(data=>sortArray(data))  
+function sortBlogs() {
+    fetch("http://localhost:3000/blogs")
+        .then(response=>response.json())
+        .then(data=>sortArray(data))  
 
-//     function sortArray(blogs) {
-//         const sortedAsc = blogs.sort(
-//             (blog1, blog2) => Number(blog1.createdAt) - Number(blog2.createdAt),                 
-//                   ).reverse();
+    function sortArray(blogs) {
+        const sortedAsc = blogs.sort(
+            (blog1, blog2) => Number(blog1.createdAt) - Number(blog2.createdAt),                 
+                  ).reverse();
          
-//            let header = sortedAsc.slice(0,1)
-//           header.forEach(char => { 
-//             const card = document.createElement("div")
-//             card.className ="blog-card"
-//             card.innerHTML= `
-//             <h2 >Most Recent Blog</h2>
-//             <img class="blog-image1" src="${char.poster}">
-//             <h1 class="blog-title">${char.title}</h1>
-//             <p class="blog-overview">${char.description.substring(0, 100) + '...'}</p>  
-//             <button class="btn dark">Read More</button> 
-//             <button id="del" class="btn dark">Delete</button>  
-//             <button id="edit" class="btn dark">Edit</button>     
-//             `
-//             const ul = document.getElementById("list-name")
-//             // const li = document.createElement("li")
-//             // li.innerHTML = char.title
-//             card.style.display="block"
-//             ul.append(card)
-//             console.log(char.title);
-//           })
-//           console.log(sortedAsc.slice(0,5))
-//     }
+           let header = sortedAsc.slice(0,1)
+          header.forEach(char => { 
+            const card = document.createElement("div")
+            card.className ="blog-card"
+            card.innerHTML= `
+            <h2 >Most Recent Blog</h2>
+            <img class="blog-image1" src="${char.poster}">
+            <h1 class="blog-title">${char.title}</h1>
+            <p class="blog-overview">${char.description.substring(0, 100) + '...'}</p>  
+            <button class="btn dark">Read More</button> 
+            <button id="del" class="btn dark">Delete</button>  
+            <button id="edit" class="btn dark">Edit</button>     
+            `
+            const ul = document.getElementById("list-name")
+            // const li = document.createElement("li")
+            // li.innerHTML = char.title
+            card.style.display="block"
+            ul.append(card)
+            console.log(char.title);
+          })
+          console.log(sortedAsc.slice(0,5))
+    }
 
     
-// }
+}
 sortBlogs()
 
 }
