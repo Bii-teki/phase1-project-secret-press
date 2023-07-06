@@ -131,15 +131,15 @@ openModal()
     }
 
 
-//    function deleteBlog(id) {
-//     fetch(`http://localhost:3000/blogs/${id}`,{
-//         method: 'Delete',
-//         headers:{
-//             'Content-Type': 'application/json'
+   function deleteBlog(id) {
+    fetch(`http://localhost:3000/blogs/${id}`,{
+        method: 'Delete',
+        headers:{
+            'Content-Type': 'application/json'
 
-//         }
-//     })
-// }
+        }
+    })
+}
 
 //     let former = document.getElementById('new-blog').addEventListener('submit', handleSubmit)
 //             // adds an event to form
