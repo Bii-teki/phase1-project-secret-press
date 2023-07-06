@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="./font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js"></script>
+    <title>Document</title>
+</head>
+<body>
+        <nav class="navbar">        
+            <ul class="link-container">
+                <li class="link"><a href="/" class="link">home</a></li>
+                <li class="link"><a href="/editor" class="link">editor</a></li>
+            </ul>
+            <div class="search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input type="text" id="s-input" placeholder="search">
+            </div>
+        </nav>
+   <div class="landing">
+    <div class="intro">
+    
+        <div class="content">
+            <h1 class="heading">Secret Press</h1>
+            <h1 class="heading">
+                <span class="welcome">welcome to Secret</span>
+                Press                
+            </h1>            
+           <button data-modal="blogEditor" id="btn" class="button">write a blog</button>
+        </div>   
+</div>
+<div class="blogs">
+    <section class="blogs-section1">
+        <div  class="blog-card">
+            <ul id="list-name"></ul>         
+        </div>
+    </section>      
+ </div>
+</div>
+<div id="editor"></div>
+<div class="display" id ="display">
+
+</div>
+
+<section id="blogs" class="blogs-section"></section>
+
+</div>
+
+<div id="blogEditor" class="modal">
+    <div class="modal-content">
+      <div class="contact-form">
+        <a id="closur"class="close">&times;</a>
+        <form id="new-blog">
+          <h2>Blog</h2>
+          <div>                    
+            <input class="fname" id="title" type="text" name="title" placeholder="Title" />
+            <input class="fname" id="topic" type="text" name="topic" placeholder="Topic" />          
+            <input type="text" id="poster" name="poster" placeholder="image" />
+          </div>Start Writing.....</span>
+          <div>
+            <textarea id="description" name="description" rows="4"></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  
+<footer class="foot"></footer> 
+</body>
+</html>
+<script>
+
+    
+  </script>
+  
