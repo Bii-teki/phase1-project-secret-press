@@ -150,23 +150,23 @@ openModal()
                const description = document.getElementById('description').value
                const poster = document.getElementById('poster').value
                
-//                if(title==='' || topic==='' || description==='' || poster==='' ){
-//                 alert("Kindly fill all the fields")
-//                }
-//                else{
+               if(title==='' || topic==='' || description==='' || poster==='' ){
+                alert("Kindly fill all the fields")
+               }
+               else{
 
-//                     e.preventDefault()
-//                     let blogObj ={
-//                     // id: e.target.id.value,
-//                     title: e.target.title.value,
-//                     topic: e.target.topic.value,
-//                     createdAt: new Date(),
-//                     description: e.target.description.value,    
-//                     poster: e.target.poster.value  
-//                 }
-//                 alert("Blog has been created Succesfully")
-//                 postBlog(blogObj)
-//             }
+                    e.preventDefault()
+                    let blogObj ={
+                    // id: e.target.id.value,
+                    title: e.target.title.value,
+                    topic: e.target.topic.value,
+                    createdAt: new Date(),
+                    description: e.target.description.value,    
+                    poster: e.target.poster.value  
+                }
+                alert("Blog has been created Succesfully")
+                postBlog(blogObj)
+            }
               
   
 //         function postBlog(blogObj) {
