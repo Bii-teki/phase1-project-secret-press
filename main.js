@@ -96,39 +96,39 @@ openModal()
     } 
 
    
-//     function displayOneBlog(id) {
-//         fetch(`http://localhost:3000/blogs/${id}`)
-//         .then(response=>response.json())
-//         .then(data=> displayerBlog(data))
+    function displayOneBlog(id) {
+        fetch(`http://localhost:3000/blogs/${id}`)
+        .then(response=>response.json())
+        .then(data=> displayerBlog(data))
         
-//     }
-//     function displayerBlog(blogs) {
+    }
+    function displayerBlog(blogs) {
         
-//         const di = document.getElementById("display")
-//         const container = document.createElement('div')
-//         container.className= "viewer-container"
-//         const modal = document.createElement('div')
-//          modal.className='viewer'
-//            modal.innerHTML=`
-//            <div class="contact-form">
-//            <a class="close">&times;</a>
-//            <img class="viewer-img" src="${blogs.poster}">
-//           <h1 class="blog-title">${blogs.title}</h1>
-//            <p class="blog-overview">${blogs.description}</p>          
-//           </div>                    
-//            `
-//            modal.style.display= "block";
-//           container.append(modal)
-//           di.append(container)
+        const di = document.getElementById("display")
+        const container = document.createElement('div')
+        container.className= "viewer-container"
+        const modal = document.createElement('div')
+         modal.className='viewer'
+           modal.innerHTML=`
+           <div class="contact-form">
+           <a class="close">&times;</a>
+           <img class="viewer-img" src="${blogs.poster}">
+          <h1 class="blog-title">${blogs.title}</h1>
+           <p class="blog-overview">${blogs.description}</p>          
+          </div>                    
+           `
+           modal.style.display= "block";
+          container.append(modal)
+          di.append(container)
 
-//           container.querySelector(".close").addEventListener('click', ()=> {
+          container.querySelector(".close").addEventListener('click', ()=> {
             
-//             container.remove()
-//          })
+            container.remove()
+         })
           
            
 
-//     }
+    }
 
 
 //    function deleteBlog(id) {
