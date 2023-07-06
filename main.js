@@ -1,4 +1,4 @@
-function mainBlog() {   
+document.addEventListener('DOMContentLoaded',function () {   
    
  function openModal(){
     const ed = document.getElementById("btn")
@@ -162,8 +162,6 @@ function sortBlogs() {
 }
 sortBlogs()
 
-}
-
-window.onload=mainBlog
+})
 
  
