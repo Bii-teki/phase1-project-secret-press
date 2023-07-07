@@ -164,7 +164,7 @@ function sortBlogs() {
             ul.append(card)
             console.log(char.title);
           })
-          console.log(sortedAsc.slice(0,5))
+          
     }
 
     

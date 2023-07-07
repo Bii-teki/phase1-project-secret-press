@@ -32,7 +32,7 @@ The following have been used on this project:
 
 
 
-#### Live link to view the project <a href="https://phase1-project-secret-press-d0svmrws5-bii-teki.vercel.app/">View Jobs Portal</a>
+#### Live link to view the project <a href="https://phase1-project-secret-press-d0svmrws5-bii-teki.vercel.app/">View Secret Press</a>
 
 
 
