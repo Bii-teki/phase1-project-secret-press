@@ -28,7 +28,7 @@ let loader = document.addEventListener('DOMContentLoaded',function () {
         closeModal()
         openModal()
 
-        fetch("http://localhost:3000/blogs")
+        fetch("https://secret-press.onrender.com/blogs")
         .then(response=>response.json())
         .then(data=>getBlogs(data))      
 
@@ -83,7 +83,7 @@ let loader = document.addEventListener('DOMContentLoaded',function () {
 
    //deletes an item from json
    function deleteBlog(id) {
-    fetch(`http://localhost:3000/blogs/${id}`,{
+    fetch(`https://secret-press.onrender.com/blogs/${id}`,{
         method: 'Delete',
         headers:{
             'Content-Type': 'application/json'
@@ -121,7 +121,7 @@ let loader = document.addEventListener('DOMContentLoaded',function () {
       //Post blogs data to json file
         function postBlog(blogObj) {
 
-            fetch('http://localhost:3000/blogs',{
+            fetch('https://secret-press.onrender.com/blogs',{
             method: 'post',
             headers: {
                 'Content-Type': 'application/json'
@@ -136,7 +136,7 @@ let loader = document.addEventListener('DOMContentLoaded',function () {
     }
  //sort fuction fetch blogs  
 function sortBlogs() {
-    fetch("http://localhost:3000/blogs")
+    fetch("https://secret-press.onrender.com/blogs")
         .then(response=>response.json())
         .then(data=>sortArray(data))  
 
