@@ -1,4 +1,4 @@
-let loader = document.addEventListener('DOMContentLoaded',function () { 
+function mainBlog() { 
     // capitalize the title as it is being typed 
     document.getElementById("title").addEventListener("change", capitalTitle); 
     function capitalTitle() {
@@ -103,6 +103,7 @@ let loader = document.addEventListener('DOMContentLoaded',function () {
                // perform form validation checking if the form is empty or not
                if(title==='' || topic==='' || description==='' || poster==='' ){
                 alert("Kindly fill all the fields")
+                document.getElementById("blogEditor").style.display= "block";
                }
                else{
                     e.preventDefault()
@@ -115,9 +116,9 @@ let loader = document.addEventListener('DOMContentLoaded',function () {
                     poster: e.target.poster.value  
                 }
                 alert("Blog has been created Succesfully")
-                postBlog(blogObj)
+                document.getElementById("blogEditor").style.display= "none";
             }
-              
+           
       //Post blogs data to json file
         function postBlog(blogObj) {
 
@@ -155,9 +156,7 @@ function sortBlogs() {
             <img class="blog-image1" src="${char.poster}">
             <h1 class="blog-title">${char.title}</h1>
             <p class="blog-overview">${char.description.substring(0, 100) + '...'}</p>  
-            <button class="btn dark">Read More</button> 
-            <button id="del" class="btn dark">Delete</button>  
-            <button id="edit" class="btn dark">Edit</button>     
+               
             `
             const ul = document.getElementById("list-name")
             card.style.display="block"
@@ -171,6 +170,7 @@ function sortBlogs() {
 }
 sortBlogs()
 
-})
+}
+window.onload=mainBlog
 
  
